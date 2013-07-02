@@ -12,7 +12,7 @@ class SuccessorChain
     sum = @freqs.inject(0) {|sum, f| sum + f[1].size}
     max = @freqs.inject(0) {|max, f| f[1].size > max[1] ? [f[0], f[1].size] : max}
     avg = sum / size
-    puts "size = #{size} sum = #{sum} max = #{max.inspect} avg = #{avg}"
+    # puts "size = #{size} sum = #{sum} max = #{max.inspect} avg = #{avg}"
   end
   def save(io)
     Marshal.dump(@freqs, io)

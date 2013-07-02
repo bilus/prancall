@@ -2,8 +2,8 @@ class SuccessorChainBuilder
   def initialize(tokenizer, chain, options = {})
     @tokenizer = tokenizer
     @chain = chain
-    @on_start = options[:on_start] || lambda {}
-    @on_word = options[:on_word] || lambda {}
+    @on_start = options[:on_start] || lambda {|word| }
+    @on_word = options[:on_word] || lambda {|word| }
   end
   def build(corpus)
     @on_start.call(corpus.words.size)

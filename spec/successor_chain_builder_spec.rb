@@ -2,9 +2,9 @@ require File.join(File.dirname(__FILE__), "../lib/successor_chain_builder.rb")
 
 describe SuccessorChainBuilder do
   before(:each) do
-    @tokenizer= mock("tokenizer", :null_object => true) 
-    @chain = mock("chain", :null_object => true)
-    @words = mock("words", :null_object => true)
+    @tokenizer= mock("tokenizer").as_null_object 
+    @chain = mock("chain").as_null_object
+    @words = mock("words").as_null_object
   end
   it "should build the chain based on input from tokenizer" do
     @words.should_receive(:each_word).and_yield("word1").and_yield("word2")

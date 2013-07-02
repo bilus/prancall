@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), "../lib/corpus.rb")
 
 describe Corpus do
   before(:each) do
-    @io = mock("io", :null_object => true)
+    @io = mock("io").as_null_object
     @corpus = Corpus.new(@io)
   end
   it "should read text from an IO object and split it into words (capitalized)" do

@@ -20,14 +20,14 @@ class Tokenizer
   private
   
   def collect_tokens(text)
-    Enumerable::Enumerator.new(text, :each_char).enum_cons(@pred_len).inject([]) do |tokens, token| 
-      tokens + [token.to_s]
+    text.each_char.each_cons(@pred_len).inject([]) do |tokens, token| 
+      tokens + [token.join]
     end
   end
   
   def do_tokenize(text)
     if (tokens = collect_tokens(text)).size > 1
-      [[make_predecessor(tokens[0]), make_successor(tokens[1]), :start]] + tokens.slice(1..tokens.size).enum_cons(2).inject([]) do |a, ps|
+      [[make_predecessor(tokens[0]), make_successor(tokens[1]), :start]] + tokens.slice(1..tokens.size).each_cons(2).inject([]) do |a, ps|
         p, s = ps
         a + [[make_predecessor(p), make_successor(s), :tail]]
       end

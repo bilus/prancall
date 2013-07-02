@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), "../lib/word_generator.rb")
 
 describe WordGenerator do
   before(:each) do
-    @producer = mock("producer", :null_object => true)
+    @producer = mock("producer").as_null_object
     @generator = WordGenerator.new(@producer)
   end
   it "should generate new word using producer" do
