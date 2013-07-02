@@ -1,0 +1,1 @@
+spec -c spec/**/*spec.rb

@@ -1,0 +1,37 @@
+NOTES
+
+1. Levenshtein distance
+2. multigram-based grapheme to phoneme conversion
+3. S. Deligne, F. Yvon, and F. Bimbot, “Variablelength
+sequence matching for phonetic transcription
+using joint multigrams,”
+
+THINGS TO SOLVE
+1. Word generation based on graphemes.
+2. Grapheme-to-phoneme conversion.
+3. Phoneme-to-grapheme conversion.
+4. Word generation based on phonemes.
+5. Levenshtein distance for graphemes.
+6. Levenshtein distance for phonemes.
+
+
+POPULATION GENERATION
+
+1. Based on user seed words, expand the dictionary based on thesaurus.
+2. User deletes words that do not fit.
+3. Use Markov Chains to generate.
+- Corpus = seed words or English/Italian dictionary or technical texts or list of existing names*.
+- Use either graphemes, syllabes or phonemes to generate (if the latter, need reliable way to turn phonemes back to graphemes).
+4. Fitness:
+  - Sound as close as possible to the existing names or seed words (Levenshtein distance).
+  - Have similar rythm and/or characteristics (similar syllabes or syllabes with the same nucleus or rhyme) to existing names or seed words.
+  - Is dissimilar to known bad words.
+5. Mutation:
+  - Replace a single token ** with WHAT? It's now similar to TS problem.
+6. Crossover:
+  - ???
+  
+  * exiting names =  list of top alexa domains or company names.
+  ** token = grapheme, phoneme or syllabe
+  
+  
